@@ -15,8 +15,7 @@
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#burger_name").val().trim(),
-      devoured: $("[name=devoured]:checked").val().trim()
+      burger_name: $("#burger_name").val().trim()
     };
 
     // Send the POST request.
@@ -26,6 +25,27 @@
     }).then(
       function() {
         console.log("created new burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+	$(".devour").on("click", function(event) {
+    var id = $(this).data("id");
+    var isDevoured = $(this).data("devoured");
+
+    var newDevouredState = {
+      devoured: isDevoured
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: newDevouredState
+    }).then(
+      function() {
+        console.log("changed devoured to", isDevoured);
         // Reload the page to get the updated list
         location.reload();
       }
