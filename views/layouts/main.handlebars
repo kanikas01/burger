@@ -17,6 +17,10 @@
     var newBurger = {
       burger_name: $("#burger_name").val().trim()
     };
+    if (!newBurger.burger_name) {
+      alert("Burger name cannot be blank.");
+      return;
+    }
 
     // Send the POST request.
     $.ajax("/api/burgers", {
