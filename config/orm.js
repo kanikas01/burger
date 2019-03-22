@@ -87,6 +87,17 @@ var orm = {
 
       cb(result);
     });
+  },
+
+  deleteOne: function(tableInput, burger, cb) {
+    var queryString = "DELETE FROM " + tableInput + " WHERE ID = " + burger.id + ";";
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
   }
 };
 

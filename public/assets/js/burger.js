@@ -44,4 +44,22 @@ $(function() {
       }
     );
   });
+
+  $(".delete").on("click", function(event) {
+    var id = $(this).data("id");
+    var deletedBurger = {
+      id: id
+    };
+  
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE",
+      data: deletedBurger
+    }).then(
+      function() {
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 });
