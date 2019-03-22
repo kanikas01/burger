@@ -53,8 +53,7 @@ $(function() {
   
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
-      type: "DELETE",
-      data: deletedBurger
+      type: "DELETE"
     }).then(
       function() {
         // Reload the page to get the updated list

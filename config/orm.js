@@ -89,10 +89,9 @@ var orm = {
     });
   },
 
-  deleteOne: function(tableInput, burger, cb) {
-    var queryString = "DELETE FROM " + tableInput + " WHERE ID = " + burger.id + ";";
-    console.log(queryString);
-    connection.query(queryString, function(err, result) {
+  deleteOne: function(tableInput, id, cb) {
+    var queryString = "DELETE FROM ?? WHERE ID = ?;";
+    connection.query(queryString, [tableInput, id], function(err, result) {
       if (err) {
         throw err;
       }
