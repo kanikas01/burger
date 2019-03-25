@@ -2,8 +2,33 @@ body {
   background-color: orange;
 }
 
+.container {
+  width: 80% !important;
+}
+
+
 img {
   width: 200px;
   height: 174px;
   text-align: center;
 }
+
+input {
+  background-color: antiquewhite !important;
+  border: 1px solid #8702a8 !important;
+}
+
+input:focus {
+  box-shadow: unset !important;
+}
+
+li {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+li button {
+  margin-top: 8px;
+}
+
