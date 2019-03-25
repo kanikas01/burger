@@ -16,6 +16,7 @@ img {
 input {
   background-color: antiquewhite !important;
   border: 1px solid #8702a8 !important;
+  /* max-width: 95%; */
 }
 
 input:focus {
@@ -32,3 +33,14 @@ li button {
   margin-top: 8px;
 }
 
+@media screen and (max-width: 992px) {
+  input {
+    max-width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  input {
+    max-width: 100%;
+  }
+}
