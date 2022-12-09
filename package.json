@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/kanikas01/burger#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "mysql": "^2.16.0"
   }
